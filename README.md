@@ -18,7 +18,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 para o seu computador local
 
 ```
-git clone https://github.com/seuusuario/seuprojeto.git
+git clone https://github.com/Mined-Development-Company/DREasy-Front.git
 ```
 
 ### 2. Crie uma nova branch:
