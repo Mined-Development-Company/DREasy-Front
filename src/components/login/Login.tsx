@@ -1,7 +1,8 @@
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form';
-import { Input } from '../form/Input';
+import { Input } from '../../forms/Input';
+import { Link } from 'react-router-dom';
 
 const schemaLogin = z.object({
   email: z
@@ -27,7 +28,7 @@ export function Login() {
 
   return(
     <article className="flex flex-col w-full h-screen lg:flex-row">
-        <div className='relative'>
+        <div className='relative hidden lg:block '>
           <img className='absolute object-contain w-10 left-6 top-5' src="/logo/DREasy.svg" alt="logo" />
           <img
             className='w-full h-[400px] sm:h-[550px] lg:h-[100vh]'
@@ -36,14 +37,14 @@ export function Login() {
           />
         </div>
         <form 
-          className='max-w-[450px] w-full m-auto py-2 px-4 rounded-lg space-y-4'
+          className='max-w-[430px] w-full m-auto py-2 px-4 rounded-lg space-y-2'
           onSubmit={handleSubmit(handleLogin)}
         >
           <div className='space-y-1'>
-            <h2 className='font-sans text-4xl font-semibold text-gray-800 '>
+            <h2 className='font-sans text-4xl font-bold text-green'>
               Access the platform
             </h2>
-            <p className="font-sans text-base font-normal text-gray-600">
+            <p className="font-sans text-lg font-normal text-gray-600">
               Log in or register to start using DREasy today.
             </p>
           </div>
@@ -63,10 +64,10 @@ export function Login() {
             />
           <div className='flex justify-between'>
             <p className="font-sans text-red hover:text-red-400 hover:underline">
-              <a className='outline-none' href="#">Forgot password</a>
+              <button className='outline-none' >Forgot password</button>
             </p>
             <p className="font-sans text-green-500 hover:text-green-400 hover:underline">
-              <a className='outline-none' href="#">Create account</a>
+              <Link to='/register'  className='outline-none'>Create account</Link>
             </p>
           </div>
           <button 
