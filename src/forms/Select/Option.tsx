@@ -7,6 +7,6 @@ type OptionProps = ComponentProps<'option'> & {
 
 export function Option(props: OptionProps) {
   return (
-    <option {...props} />
+    <option {...props} className="sr-only opacity-0" />
   );
 }
