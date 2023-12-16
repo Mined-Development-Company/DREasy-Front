@@ -1,16 +1,27 @@
+// React-router-dom
 import { Routes, Route } from 'react-router-dom';
-
-import { Home } from '../pages';
-import { Login } from '../components/login/Login';
-import { Register } from '../components/register/Register';
+// Pages
+import {
+  CashFlow,
+  DrePage,
+  HomePage,
+  InvoicesPage,
+  LoginPage,
+  ReceivesPage,
+  RegisterPage,
+} from '../pages';
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path='/' element={<Login/>}/>
-      <Route path="/home" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/receives" element={<ReceivesPage />} />
+      <Route path="/invoices" element={<InvoicesPage />} />
+      <Route path="/cash-flow" element={<CashFlow />} />
+      <Route path="/dre" element={<DrePage />} />
     </Routes>
   );
 };

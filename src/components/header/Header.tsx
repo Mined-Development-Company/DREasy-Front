@@ -1,24 +1,45 @@
-import { Link } from "react-router-dom";
-import { IoSettingsSharp, IoNotifications } from 'react-icons/io5'
+import { Link } from 'react-router-dom';
+import { IoSettingsSharp, IoNotifications } from 'react-icons/io5';
+import { cn } from '../../libs/cn';
 
-export const Header = () => {
+interface IHeader {
+  showSiderBar: boolean;
+  handleShowSideBar: () => void;
+}
+
+export const Header = ({ showSiderBar, handleShowSideBar }: IHeader) => {
   return (
-    <nav className="flex items-center text-grayish-green gap-2 sm:gap-5 w-fit">
-      <div className="flex items-center">
-        <span className="w-7 h-7 sm:w-9 sm:h-9 mr-2 text-xs sm:text-sm border-2 rounded-full flex items-center justify-center font-medium bg-red-300 bg-white border-green-500 select-none">
-          US
-        </span>
-
-        <span className="text-sm sm:text-xl">Usuário</span>
-      </div>
-
-      <Link aria-label="Configurações" className="p-1" to="/settings">
-        <IoSettingsSharp />
-      </Link>
-
-      <button aria-label="Notificações" className="p-1" type="button">
-        <IoNotifications />
+    <header
+      className={cn(
+        'flex items-center',
+        showSiderBar ? 'justify-end' : 'justify-between',
+      )}
+    >
+      <button
+        onClick={handleShowSideBar}
+        className={cn('space-y-2', showSiderBar && 'hidden')}
+      >
+        <div className="w-8 h-0.5 bg-grayish-green"></div>
+        <div className="w-8 h-0.5 bg-grayish-green"></div>
+        <div className="w-8 h-0.5 bg-grayish-green"></div>
       </button>
-    </nav>
+      <nav className="flex items-center gap-2 text-grayish-green sm:gap-5 w-fit">
+        <div className="flex items-center">
+          <span className="flex items-center justify-center mr-2 text-xs font-medium bg-white bg-red-300 border-2 border-green-500 rounded-full select-none w-7 h-7 sm:w-9 sm:h-9 sm:text-sm">
+            US
+          </span>
+
+          <span className="text-sm sm:text-xl">Usuário</span>
+        </div>
+
+        <Link aria-label="Configurações" className="p-1" to="/settings">
+          <IoSettingsSharp />
+        </Link>
+
+        <button aria-label="Notificações" className="p-1" type="button">
+          <IoNotifications />
+        </button>
+      </nav>
+    </header>
   );
 };

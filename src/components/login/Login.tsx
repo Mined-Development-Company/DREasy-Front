@@ -27,7 +27,7 @@ export function Login() {
   });
 
   return(
-    <article className="flex flex-col w-full h-screen lg:flex-row">
+    <article className="relative flex flex-col w-screen h-screen lg:flex-row">
         <div className='relative hidden lg:block '>
           <img className='absolute object-contain w-10 left-6 top-5' src="/logo/DREasy.svg" alt="logo" />
           <img

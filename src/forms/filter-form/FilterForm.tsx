@@ -1,12 +1,12 @@
-import { useForm } from "react-hook-form";
-import { Button } from "../../ui/Button";
-import { DateInput } from "../DateInput";
-import { CurrencyInput } from "../currency-input/CurrencyInput";
-import { Option, Select } from "../select";
-import { DateGroup } from "./DateGroup";
-import { FieldsGroup } from "./FieldsGroup";
-import { Legend } from "./Legend";
-import { ErrorMessage } from "./ErrorMessage";
+import { useForm } from 'react-hook-form';
+import { Button } from '../../components/ui/Button';
+import { DateInput } from '../DateInput';
+import { CurrencyInput } from '../currency-input/CurrencyInput';
+import { Option, Select } from '../select';
+import { DateGroup } from './DateGroup';
+import { FieldsGroup } from './FieldsGroup';
+import { Legend } from './Legend';
+import { ErrorMessage } from './ErrorMessage';
 
 const statuses = [
   { text: 'Abertas', value: 'open' },
@@ -37,11 +37,13 @@ type Fields = {
 
   minReversalDate?: string;
   maxReversalDate?: string;
-}
+};
 
 export function FilterForm() {
   const {
-    register, handleSubmit, formState: { errors },
+    register,
+    handleSubmit,
+    formState: { errors },
   } = useForm<Fields>();
 
   const onSubmit = handleSubmit((fields) => {
@@ -64,7 +66,7 @@ export function FilterForm() {
                   name="status"
                   className="mr-1"
                 />
-                
+
                 <span>{status.text}</span>
               </label>
             ))}
@@ -75,33 +77,35 @@ export function FilterForm() {
           <fieldset>
             <Legend>Valor</Legend>
 
-            <DateGroup >
+            <DateGroup>
               <CurrencyInput
-                classes={{ container: "flex-1" }}
+                classes={{ container: 'flex-1' }}
                 {...register('minValue')}
               />
 
               <span>até</span>
 
               <CurrencyInput
-                classes={{ container: "flex-1" }}
+                classes={{ container: 'flex-1' }}
                 {...register('maxValue')}
               />
             </DateGroup>
 
-            <ErrorMessage>{errors.minValue?.message || errors.maxValue?.message}</ErrorMessage>
+            <ErrorMessage>
+              {errors.minValue?.message || errors.maxValue?.message}
+            </ErrorMessage>
           </fieldset>
-          
+
           <div>
             <Select
-              classes={{ container: "w-full" }}
+              classes={{ container: 'w-full' }}
               placeholder="Fornecedor ou transportadora"
               {...register('supplier')}
             >
               <Option value="amazon">Amazon</Option>
               <Option value="mercado-livre">Mercado livre</Option>
             </Select>
-            
+
             <ErrorMessage>{errors.supplier?.message}</ErrorMessage>
           </div>
         </FieldsGroup>
@@ -109,20 +113,20 @@ export function FilterForm() {
         <FieldsGroup>
           <div>
             <Select
-              classes={{ container: "w-full" }}
+              classes={{ container: 'w-full' }}
               placeholder="Categoria"
               {...register('category')}
             >
               <Option value="somevalue1">Some option 1</Option>
               <Option value="somevalue2">Some option 2</Option>
             </Select>
-            
+
             <ErrorMessage>{errors.category?.message}</ErrorMessage>
           </div>
-            
+
           <div>
             <Select
-              classes={{ container: "w-full" }}
+              classes={{ container: 'w-full' }}
               placeholder="Tipo de documento"
               {...register('documentType')}
             >
@@ -132,10 +136,10 @@ export function FilterForm() {
 
             <ErrorMessage>{errors.documentType?.message}</ErrorMessage>
           </div>
-          
+
           <div>
             <Select
-              classes={{ container: "w-full" }}
+              classes={{ container: 'w-full' }}
               placeholder="Conta bancária"
               {...register('bankAccount')}
             >
@@ -148,7 +152,7 @@ export function FilterForm() {
 
           <fieldset>
             <Legend>Data de emissão</Legend>
-            
+
             <DateGroup>
               <DateInput
                 classes={{ container: 'flex-1' }}
@@ -163,7 +167,9 @@ export function FilterForm() {
               />
             </DateGroup>
 
-            <ErrorMessage>{errors.minOpenDate?.message || errors.maxOpenDate?.message}</ErrorMessage>
+            <ErrorMessage>
+              {errors.minOpenDate?.message || errors.maxOpenDate?.message}
+            </ErrorMessage>
           </fieldset>
         </FieldsGroup>
 
@@ -171,7 +177,7 @@ export function FilterForm() {
           <fieldset className="lg:w-[48.5%]">
             <Legend>Data de vencimento</Legend>
 
-            <DateGroup className="w-full"> 
+            <DateGroup className="w-full">
               <DateInput
                 classes={{ container: 'flex-1' }}
                 {...register('minExpirationDate')}
@@ -185,13 +191,16 @@ export function FilterForm() {
               />
             </DateGroup>
 
-            <ErrorMessage>{errors.minExpirationDate?.message || errors.maxExpirationDate?.message}</ErrorMessage>
+            <ErrorMessage>
+              {errors.minExpirationDate?.message ||
+                errors.maxExpirationDate?.message}
+            </ErrorMessage>
           </fieldset>
 
           <fieldset className="lg:w-[48.5%]">
             <Legend>Data de quitação</Legend>
 
-            <DateGroup className="w-full"> 
+            <DateGroup className="w-full">
               <DateInput
                 classes={{ container: 'flex-1' }}
                 {...register('minPaymentDate')}
@@ -205,13 +214,15 @@ export function FilterForm() {
               />
             </DateGroup>
 
-            <ErrorMessage>{errors.minPaymentDate?.message || errors.maxPaymentDate?.message}</ErrorMessage>
+            <ErrorMessage>
+              {errors.minPaymentDate?.message || errors.maxPaymentDate?.message}
+            </ErrorMessage>
           </fieldset>
 
           <fieldset className="lg:w-[48.5%]">
             <Legend>Data de estorno</Legend>
 
-            <DateGroup className="w-full"> 
+            <DateGroup className="w-full">
               <DateInput
                 classes={{ container: 'flex-1' }}
                 {...register('minReversalDate')}
@@ -225,21 +236,20 @@ export function FilterForm() {
               />
             </DateGroup>
 
-            <ErrorMessage>{errors.minReversalDate?.message || errors.maxReversalDate?.message}</ErrorMessage>
+            <ErrorMessage>
+              {errors.minReversalDate?.message ||
+                errors.maxReversalDate?.message}
+            </ErrorMessage>
           </fieldset>
         </FieldsGroup>
       </div>
 
       <div className="flex justify-end gap-5 mt-3 sm:mt-6">
-        <Button
-          color="secondary"
-          type="button"
-          className="min-w-[112px]"
-        >
+        <Button color="secondary" type="button" className="min-w-[112px]">
           Limpar filtros
         </Button>
 
-        <Button 
+        <Button
           type="submit"
           className="min-w-[112px]"
           aria-label="Adicionar uma conta"

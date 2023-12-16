@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      boxShadow: {
+        custon: '1px 3px 4px rgba(0, 0, 0, 0.25)',
+      },
       colors: {
         //primary
         green: '#22C55E',
@@ -24,7 +27,7 @@ export default {
       },
       minWidth: {
         xs: '380px',
-      }
+      },
     },
   },
   plugins: [],
