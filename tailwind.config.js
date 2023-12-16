@@ -19,6 +19,12 @@ export default {
         'gradient-one': '#23FF95',
         'gradient-two': '#10B77E',
       },
+      screens: {
+        xs: '380px',
+      },
+      minWidth: {
+        xs: '380px',
+      }
     },
   },
   plugins: [],
