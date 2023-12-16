@@ -75,7 +75,7 @@ export function FilterForm() {
           <fieldset>
             <Legend>Valor</Legend>
 
-            <DateGroup className="xs:min-w-xs">
+            <DateGroup >
               <CurrencyInput
                 classes={{ container: "flex-1" }}
                 {...register('minValue')}
