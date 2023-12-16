@@ -6,43 +6,39 @@ import { DateGroup } from "./DateGroup";
 import { FieldsGroup } from "./FieldsGroup";
 import { Legend } from "./Legend";
 
+const statuses = [
+  { text: 'Abertas', value: '' },
+  { text: 'Vencidas', value: '' },
+  { text: 'Quitadas', value: '' },
+  { text: 'Estornadas', value: '' },
+];
+
 export function FilterForm() {
   return (
     <form>
-      <div className="mt-8 gap-8 flex flex-wrap justify-between">
+      <div className=" flex-col sm:flex-row mt-8 gap-8 flex flex-wrap justify-between">
         <FieldsGroup className="justify-between">
           <fieldset className="grid grid-cols-2 grid-rows-2 text-sm">
             <Legend>Status</Legend>
 
-            <label>
-              <input type="checkbox" name="status" className="mr-1" />
-              
-              <span>Abertas</span>
-            </label>
-
-            <label>
-              <input type="checkbox" name="status" className="mr-1" />
-              
-              <span>Vencidas</span>
-            </label>
-
-            <label>
-              <input type="checkbox" name="status" className="mr-1" />
-              
-              <span>Quitadas</span>
-            </label>
-
-            <label>
-              <input type="checkbox" name="status" className="mr-1" />
-              
-              <span>Estornadas</span>
-            </label>
+            {statuses.map((status) => (
+              <label key={status.text}>
+                <input
+                  value={status.value}
+                  type="checkbox"
+                  name="status"
+                  className="mr-1"
+                />
+                
+                <span>{status.text}</span>
+              </label>
+            ))}
           </fieldset>
 
           <fieldset>
             <Legend>Valor</Legend>
 
-            <DateGroup>
+            <DateGroup className="xs:min-w-xs">
               <CurrencyInput classes={{ container: "flex-1" }} />
 
               <span>até</span>
@@ -58,7 +54,6 @@ export function FilterForm() {
         </FieldsGroup>
 
         <FieldsGroup>
-
           <Select classes={{ container: "w-full" }} placeholder="Categoria">
             <Option value="somevalue1">Some option 1</Option>
             <Option value="somevalue2">Some option 2</Option>
@@ -88,7 +83,7 @@ export function FilterForm() {
         </FieldsGroup>
 
         <FieldsGroup className="justify-between">
-          <fieldset className="w-[48.5%]">
+          <fieldset className="lg:w-[48.5%]">
             <Legend>Data de vencimento</Legend>
 
             <DateGroup className="w-full"> 
@@ -100,7 +95,7 @@ export function FilterForm() {
             </DateGroup>
           </fieldset>
 
-          <fieldset className="w-[48.5%]">
+          <fieldset className="lg:w-[48.5%]">
             <Legend>Data de quitação</Legend>
 
             <DateGroup className="w-full"> 
@@ -112,7 +107,7 @@ export function FilterForm() {
             </DateGroup>
           </fieldset>
 
-          <fieldset className="w-[48.5%]">
+          <fieldset className="lg:w-[48.5%]">
             <Legend>Data de estorno</Legend>
 
             <DateGroup className="w-full"> 
