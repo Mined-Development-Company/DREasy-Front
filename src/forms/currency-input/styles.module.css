@@ -1,0 +1,13 @@
+/* Remove arrows of number input */
+
+/* Chrome, Safari, Edge, Opera */
+.currency input::-webkit-outer-spin-button,
+.currency input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.currency input[type=number] {
+  -moz-appearance: textfield;
+}

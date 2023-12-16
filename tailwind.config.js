@@ -11,7 +11,7 @@ export default {
         'grayish-green': '#294333',
         'green-300': '#4ADE80',
         'green-500': '#22C55E',
-        red: '#FF3636',
+        'custom-red': '#FF3636',
 
         //background
         'green-light': '#F1FFF8',
@@ -19,6 +19,12 @@ export default {
         'gradient-one': '#23FF95',
         'gradient-two': '#10B77E',
       },
+      screens: {
+        xs: '380px',
+      },
+      minWidth: {
+        xs: '380px',
+      }
     },
   },
   plugins: [],
