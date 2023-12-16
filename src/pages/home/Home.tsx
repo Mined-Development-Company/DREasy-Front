@@ -1,5 +1,6 @@
 import { Header } from '../../components';
 import { CurrencyInput } from '../../forms/CurrencyInput';
+import { DateInput } from '../../forms/DateInput';
 import { Option, Select } from '../../forms/Select';
 
 export const Home = () => {
@@ -8,6 +9,8 @@ export const Home = () => {
       <Header />
       
       <CurrencyInput />
+
+      <DateInput />
 
       <Select>
         <Option value="a">opt a</Option>
