@@ -6,6 +6,7 @@ import { Option, Select } from "../select";
 import { DateGroup } from "./DateGroup";
 import { FieldsGroup } from "./FieldsGroup";
 import { Legend } from "./Legend";
+import { ErrorMessage } from "./ErrorMessage";
 
 const statuses = [
   { text: 'Abertas', value: 'open' },
@@ -67,6 +68,8 @@ export function FilterForm() {
                 <span>{status.text}</span>
               </label>
             ))}
+
+            <ErrorMessage>{errors.status?.message}</ErrorMessage>
           </fieldset>
 
           <fieldset>
@@ -85,45 +88,63 @@ export function FilterForm() {
                 {...register('maxValue')}
               />
             </DateGroup>
-          </fieldset>
 
-          <Select
-            classes={{ container: "w-full" }}
-            placeholder="Fornecedor ou transportadora"
-            {...register('supplier')}
-          >
-            <Option value="amazon">Amazon</Option>
-            <Option value="mercado-livre">Mercado livre</Option>
-          </Select>
+            <ErrorMessage>{errors.minValue?.message || errors.maxValue?.message}</ErrorMessage>
+          </fieldset>
+          
+          <div>
+            <Select
+              classes={{ container: "w-full" }}
+              placeholder="Fornecedor ou transportadora"
+              {...register('supplier')}
+            >
+              <Option value="amazon">Amazon</Option>
+              <Option value="mercado-livre">Mercado livre</Option>
+            </Select>
+            
+            <ErrorMessage>{errors.supplier?.message}</ErrorMessage>
+          </div>
         </FieldsGroup>
 
         <FieldsGroup>
-          <Select
-            classes={{ container: "w-full" }}
-            placeholder="Categoria"
-            {...register('category')}
-          >
-            <Option value="somevalue1">Some option 1</Option>
-            <Option value="somevalue2">Some option 2</Option>
-          </Select>
+          <div>
+            <Select
+              classes={{ container: "w-full" }}
+              placeholder="Categoria"
+              {...register('category')}
+            >
+              <Option value="somevalue1">Some option 1</Option>
+              <Option value="somevalue2">Some option 2</Option>
+            </Select>
+            
+            <ErrorMessage>{errors.category?.message}</ErrorMessage>
+          </div>
+            
+          <div>
+            <Select
+              classes={{ container: "w-full" }}
+              placeholder="Tipo de documento"
+              {...register('documentType')}
+            >
+              <Option value="somevalue1">Some option 1</Option>
+              <Option value="somevalue2">Some option 2</Option>
+            </Select>
 
-          <Select
-            classes={{ container: "w-full" }}
-            placeholder="Tipo de documento"
-            {...register('documentType')}
-          >
-            <Option value="somevalue1">Some option 1</Option>
-            <Option value="somevalue2">Some option 2</Option>
-          </Select>
+            <ErrorMessage>{errors.documentType?.message}</ErrorMessage>
+          </div>
+          
+          <div>
+            <Select
+              classes={{ container: "w-full" }}
+              placeholder="Conta bancária"
+              {...register('bankAccount')}
+            >
+              <Option value="somevalue1">Some option 1</Option>
+              <Option value="somevalue2">Some option 2</Option>
+            </Select>
 
-          <Select
-            classes={{ container: "w-full" }}
-            placeholder="Conta bancária"
-            {...register('bankAccount')}
-          >
-            <Option value="somevalue1">Some option 1</Option>
-            <Option value="somevalue2">Some option 2</Option>
-          </Select>
+            <ErrorMessage>{errors.bankAccount?.message}</ErrorMessage>
+          </div>
 
           <fieldset>
             <Legend>Data de emissão</Legend>
@@ -141,6 +162,8 @@ export function FilterForm() {
                 {...register('maxOpenDate')}
               />
             </DateGroup>
+
+            <ErrorMessage>{errors.minOpenDate?.message || errors.maxOpenDate?.message}</ErrorMessage>
           </fieldset>
         </FieldsGroup>
 
@@ -161,6 +184,8 @@ export function FilterForm() {
                 {...register('maxExpirationDate')}
               />
             </DateGroup>
+
+            <ErrorMessage>{errors.minExpirationDate?.message || errors.maxExpirationDate?.message}</ErrorMessage>
           </fieldset>
 
           <fieldset className="lg:w-[48.5%]">
@@ -179,6 +204,8 @@ export function FilterForm() {
                 {...register('maxPaymentDate')}
               />
             </DateGroup>
+
+            <ErrorMessage>{errors.minPaymentDate?.message || errors.maxPaymentDate?.message}</ErrorMessage>
           </fieldset>
 
           <fieldset className="lg:w-[48.5%]">
@@ -197,6 +224,8 @@ export function FilterForm() {
                 {...register('maxReversalDate')}
               />
             </DateGroup>
+
+            <ErrorMessage>{errors.minReversalDate?.message || errors.maxReversalDate?.message}</ErrorMessage>
           </fieldset>
         </FieldsGroup>
       </div>
