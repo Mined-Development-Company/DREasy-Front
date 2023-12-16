@@ -1,5 +1,8 @@
+// React-hook-form
 import { useForm } from 'react-hook-form';
-import { Button } from '../../components/ui/Button';
+// Components / Ui
+import { Button } from '../../components/ui';
+// Forms
 import { DateInput } from '../DateInput';
 import { CurrencyInput } from '../currency-input/CurrencyInput';
 import { Option, Select } from '../select';
@@ -52,7 +55,7 @@ export function FilterForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className=" flex-col sm:flex-row mt-8 gap-8 flex flex-wrap justify-between">
+      <div className="flex flex-col flex-wrap justify-between gap-8 mt-8 sm:flex-row">
         <FieldsGroup className="justify-between">
           <fieldset className="grid grid-cols-2 grid-rows-2 text-sm">
             <Legend>Status</Legend>

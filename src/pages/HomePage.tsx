@@ -1,11 +1,11 @@
-import { Header } from '../components';
-import { BillTableControls } from '../components/bill-table-controls/BillTableControls';
+// Layout
 import { LayoutDualPanel } from '../layouts';
+// Components
+import { BillTableControls } from '../components';
 
 export const HomePage = () => {
   return (
     <LayoutDualPanel>
-      <Header />
       <BillTableControls />
     </LayoutDualPanel>
   );

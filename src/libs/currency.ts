@@ -1,4 +1,4 @@
-export function formatToCurrency(value: string): string {
+export const formatToCurrency = (value: string): string => {
   let onlyDigits = value.replace(/[^\d]/g, '');
 
   const minimumIntegerDigits = 1;

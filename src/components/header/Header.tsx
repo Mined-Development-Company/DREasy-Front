@@ -1,6 +1,9 @@
+// React-router-dom
 import { Link } from 'react-router-dom';
+// React-icons
 import { IoSettingsSharp, IoNotifications } from 'react-icons/io5';
-import { cn } from '../../libs/cn';
+// Libs
+import { cn } from '../../libs';
 
 interface IHeader {
   showSiderBar: boolean;

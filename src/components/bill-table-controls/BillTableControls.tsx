@@ -1,17 +1,20 @@
-import { useState } from 'react';
-import { FiPlusCircle } from 'react-icons/fi';
-import { FilterForm } from '../../forms/filter-form/FilterForm';
+import React from 'react';
+// Ui
 import { Button } from '../ui/Button';
+// Form
+import { FilterForm } from '../../forms';
+// React icons
+import { FiPlusCircle } from 'react-icons/fi';
 
 export function BillTableControls() {
-  const [showFilters, setShowFilters] = useState<boolean>(false);
+  const [showFilters, setShowFilters] = React.useState<boolean>(false);
 
   const toggleFilters = () => {
     setShowFilters((prev) => !prev);
   };
 
   return (
-    <div className="bg-white p-3 sm:p-5 shadow-md rounded-xl border m-2">
+    <div className="p-3 m-2 bg-white border shadow-md sm:p-5 rounded-xl">
       <div className="flex items-center justify-between gap-3">
         <Button
           size="md"

@@ -1,8 +1,12 @@
+// Zod
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+// React-hook-form
 import { useForm } from 'react-hook-form';
+// Forms
+import { Input } from '../../forms';
+// React-router-dom
 import { Link } from 'react-router-dom';
-import { Input } from '../../forms/Input';
 
 const schemaLogin = z.object({
   email: z
@@ -34,7 +38,11 @@ export function Register() {
   return (
     <article className="w-full h-screen lg:flex">
       <div className="hidden lg:block">
-      <img className='absolute object-contain w-10 left-6 top-5' src="/logo/DREasy.svg" alt="logo" />
+        <img
+          className="absolute object-contain w-10 left-6 top-5"
+          src="/logo/DREasy.svg"
+          alt="logo"
+        />
         <img
           className="object-cover w-full h-full"
           src="/background/background.png"
@@ -46,10 +54,8 @@ export function Register() {
         className="m-auto max-w-[400px] w-full p-8 px-8 rounded-lg"
         onSubmit={handleSubmit(handleRegister)}
       >
-        <div className='space-y-2'>
-          <h2 className="font-sans text-5xl font-bold text-green">
-            Register
-          </h2>
+        <div className="space-y-2">
+          <h2 className="font-sans text-5xl font-bold text-green">Register</h2>
           <p className="font-sans text-base font-normal text-gray-600">
             Register to start using DREasy today.
           </p>

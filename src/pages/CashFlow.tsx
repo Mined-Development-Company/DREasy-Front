@@ -1,3 +1,4 @@
+// Layout
 import { LayoutDualPanel } from '../layouts';
 
 export const CashFlow = () => {

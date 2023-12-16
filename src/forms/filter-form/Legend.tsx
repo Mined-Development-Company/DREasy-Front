@@ -1,10 +1,15 @@
+// React
 import { ComponentProps } from 'react';
-import { cn } from '../../libs/cn';
+// Libs
+import { cn } from '../../libs';
 
 type Props = ComponentProps<'legend'>;
 
 export function Legend({ className, ...props }: Props) {
   return (
-    <legend className={cn('text-sm text-grayish-green font-medium mb-1', className)} {...props} />
+    <legend
+      className={cn('text-sm text-grayish-green font-medium mb-1', className)}
+      {...props}
+    />
   );
 }

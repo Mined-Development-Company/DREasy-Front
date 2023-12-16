@@ -1,5 +1,8 @@
+// React
 import React from 'react';
-import { cn } from '../libs/cn';
+// Libs
+import { cn } from '../libs';
+// Forms
 import { ErrorMessage } from './filter-form/ErrorMessage';
 
 type IInputProps = React.HTMLAttributes<HTMLInputElement> & {

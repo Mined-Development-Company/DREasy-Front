@@ -1,6 +1,9 @@
+// React
 import React from 'react';
-import { SideBar } from '../components/ui/SideBar';
-import { cn } from '../libs/cn';
+// Libs
+import { cn } from '../libs';
+// Components
+import { SideBar } from '../components/ui';
 import { Header } from '../components';
 
 interface ILayoutDualPanel {

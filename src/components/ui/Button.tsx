@@ -1,5 +1,7 @@
+// React
 import { ComponentProps } from 'react';
-import { cn } from '../../libs/cn';
+// Libs
+import { cn } from '../../libs';
 
 const variants = {
   color: {
@@ -17,16 +19,16 @@ type Props = ComponentProps<'button'> & {
   size?: keyof typeof variants.size;
 };
 
-export function Button({
+export const Button = ({
   color = 'primary',
   size = 'sm',
   className,
   ...props
-}: Props) {
+}: Props) => {
   return (
     <button
       className={cn(variants.color[color], variants.size[size], className)}
       {...props}
     />
   );
-}
+};

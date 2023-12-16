@@ -1,5 +1,7 @@
+// Layout
 import { LayoutDualPanel } from '../layouts';
-import { BillTableControls } from '../components/bill-table-controls/BillTableControls';
+// Components
+import { BillTableControls } from '../components';
 
 export const ReceivesPage = () => {
   return (
