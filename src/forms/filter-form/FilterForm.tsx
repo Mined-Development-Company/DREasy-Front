@@ -8,10 +8,10 @@ import { FieldsGroup } from "./FieldsGroup";
 import { Legend } from "./Legend";
 
 const statuses = [
-  { text: 'Abertas', value: '' },
-  { text: 'Vencidas', value: '' },
-  { text: 'Quitadas', value: '' },
-  { text: 'Estornadas', value: '' },
+  { text: 'Abertas', value: 'open' },
+  { text: 'Vencidas', value: 'expired' },
+  { text: 'Quitadas', value: 'paid' },
+  { text: 'Estornadas', value: 'reversed' },
 ];
 
 type Fields = {
@@ -25,14 +25,14 @@ type Fields = {
   minValue?: number;
   maxValue?: number;
 
-  minIssueDate?: string;
-  maxIssueDate?: string;
+  minOpenDate?: string;
+  maxOpenDate?: string;
 
-  minDueDate?: string;
-  maxDueDate?: string;
+  minExpirationDate?: string;
+  maxExpirationDate?: string;
 
-  minDischargeDate?: string;
-  maxDischargeDate?: string;
+  minPaymentDate?: string;
+  maxPaymentDate?: string;
 
   minReversalDate?: string;
   maxReversalDate?: string;
@@ -131,14 +131,14 @@ export function FilterForm() {
             <DateGroup>
               <DateInput
                 classes={{ container: 'flex-1' }}
-                {...register('minIssueDate')}
+                {...register('minOpenDate')}
               />
 
               <span>até</span>
 
               <DateInput
                 classes={{ container: 'flex-1' }}
-                {...register('maxIssueDate')}
+                {...register('maxOpenDate')}
               />
             </DateGroup>
           </fieldset>
@@ -151,14 +151,14 @@ export function FilterForm() {
             <DateGroup className="w-full"> 
               <DateInput
                 classes={{ container: 'flex-1' }}
-                {...register('minDueDate')}
+                {...register('minExpirationDate')}
               />
 
               <span>até</span>
 
               <DateInput
                 classes={{ container: 'flex-1' }}
-                {...register('maxDueDate')}
+                {...register('maxExpirationDate')}
               />
             </DateGroup>
           </fieldset>
@@ -169,14 +169,14 @@ export function FilterForm() {
             <DateGroup className="w-full"> 
               <DateInput
                 classes={{ container: 'flex-1' }}
-                {...register('minDischargeDate')}
+                {...register('minPaymentDate')}
               />
 
               <span>até</span>
 
               <DateInput
                 classes={{ container: 'flex-1' }}
-                {...register('maxDischargeDate')}
+                {...register('maxPaymentDate')}
               />
             </DateGroup>
           </fieldset>
