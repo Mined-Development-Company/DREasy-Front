@@ -17,14 +17,12 @@ type Props = ComponentProps<'input'> & {
  * CurrencyInput é um input personalizado que recebe apenas números
  * e exibe o valor formatado com **no mínimo** 1 casa inteira e 2 casas decimais.
  * 
- * Exemplo: 0,00 ou 0,10 ou 123,00
+ * Exemplo: 0.00 ou 0.10 ou 123.00
  * 
  * @component
- * @param {function} props.handleChange - Um manipulador de eventos personalizado.
- * Envia o valor do input (do tipo number) como parâmetro.
  * @param {string} props.defaultValue - Define o valor inicial do input. Deve 
- * ser uma string representando um número decimal com uma vírgula como separador
- * decimal.
+ * ser um número ou uma string representando um número decimal com um ponto como
+ * separador decimal.
  * 
  * @example
  * // Exemplo de uso
@@ -33,20 +31,19 @@ type Props = ComponentProps<'input'> & {
  *   // resultado do console log: 12.3
  * }
  * 
- * <CurrencyInput defaultValue="12,3" onChange={handleChange} />
+ * <CurrencyInput defaultValue="12.3" onChange={handleChange} />
  */
 export const CurrencyInput = forwardRef<HTMLInputElement, Props>(
-  function CurrencyInput({ classes, onChange, handleChange, defaultValue, ...props }, ref) {
+  function CurrencyInput({ classes, onChange, defaultValue, ...props }, ref) {
     const [value, setValue] = useState(defaultValue ?? '');
 
-    const formatChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       const inputValue = event.target.value;
       const currencyValue = formatToCurrency(inputValue);
 
       setValue(currencyValue);
 
       if (onChange) { onChange(event) }
-      if (handleChange) { handleChange(Number(currencyValue)); }
     }
     
     return (
@@ -59,7 +56,7 @@ export const CurrencyInput = forwardRef<HTMLInputElement, Props>(
           {...props}
           value={value}
           ref={ref}
-          onChange={formatChange}
+          onChange={handleChange}
           type="number"
         />
       </div>

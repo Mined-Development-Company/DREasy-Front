@@ -11,8 +11,8 @@ export function formatToCurrency(value: string): string {
   const startsWithZero = onlyDigits[0] === '0';
   if (isBiggerThanMinimum && startsWithZero) { onlyDigits = onlyDigits.slice(1); }
 
-  const commaIndex = onlyDigits.length - decimalDigits;
-  const integers = onlyDigits.substring(0, commaIndex);
-  const decimals = onlyDigits.substring(commaIndex, onlyDigits.length);
+  const dotIndex = onlyDigits.length - decimalDigits;
+  const integers = onlyDigits.substring(0, dotIndex);
+  const decimals = onlyDigits.substring(dotIndex, onlyDigits.length);
   return integers + '.' + decimals;
 }
