@@ -1,16 +1,48 @@
-import { UseExample } from '../../context';
+// React-router-dom
+import { Link } from 'react-router-dom';
+// React-icons
+import { IoSettingsSharp, IoNotifications } from 'react-icons/io5';
+// Libs
+import { cn } from '../../libs';
 
-export const Header = () => {
-  const { value, setValue } = UseExample();
+interface IHeader {
+  showSiderBar: boolean;
+  handleShowSideBar: () => void;
+}
+
+export const Header = ({ showSiderBar, handleShowSideBar }: IHeader) => {
   return (
-    <header className="h-screen flex justify-center items-center gap-6">
+    <header
+      className={cn(
+        'flex items-center',
+        showSiderBar ? 'justify-end' : 'justify-between',
+      )}
+    >
       <button
-        onClick={() => setValue(value + 1)}
-        className="px-12 py-2 font-semibold text-white rounded-full bg-blue-800"
+        onClick={handleShowSideBar}
+        className={cn('space-y-2', showSiderBar && 'hidden')}
       >
-        add
+        <div className="w-8 h-0.5 bg-grayish-green"></div>
+        <div className="w-8 h-0.5 bg-grayish-green"></div>
+        <div className="w-8 h-0.5 bg-grayish-green"></div>
       </button>
-      <p className="text-xl font-semibold">{value}</p>
+      <nav className="flex items-center gap-2 text-grayish-green sm:gap-5 w-fit">
+        <div className="flex items-center">
+          <span className="flex items-center justify-center mr-2 text-xs font-medium bg-white bg-red-300 border-2 border-green-500 rounded-full select-none w-7 h-7 sm:w-9 sm:h-9 sm:text-sm">
+            US
+          </span>
+
+          <span className="text-sm sm:text-xl">Usuário</span>
+        </div>
+
+        <Link aria-label="Configurações" className="p-1" to="/settings">
+          <IoSettingsSharp />
+        </Link>
+
+        <button aria-label="Notificações" className="p-1" type="button">
+          <IoNotifications />
+        </button>
+      </nav>
     </header>
   );
 };
