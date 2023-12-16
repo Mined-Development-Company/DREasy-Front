@@ -4,7 +4,7 @@ import { formatToCurrency } from "../../libs/currency";
 import styles from './styles.module.css';
 
 type Props = ComponentProps<'input'> & {
-  onChange?: (value: number) => void;
+  handleChange?: (value: number) => void;
   classes?: {
     container?: string;
     input?: string;
@@ -20,7 +20,7 @@ type Props = ComponentProps<'input'> & {
  * Exemplo: 0,00 ou 0,10 ou 123,00
  * 
  * @component
- * @param {function} props.onChange - Um manipulador de eventos personalizado.
+ * @param {function} props.handleChange - Um manipulador de eventos personalizado.
  * Envia o valor do input (do tipo number) como parâmetro.
  * @param {string} props.defaultValue - Define o valor inicial do input. Deve 
  * ser uma string representando um número decimal com uma vírgula como separador
@@ -36,16 +36,17 @@ type Props = ComponentProps<'input'> & {
  * <CurrencyInput defaultValue="12,3" onChange={handleChange} />
  */
 export const CurrencyInput = forwardRef<HTMLInputElement, Props>(
-  function CurrencyInput({ classes, onChange, defaultValue, ...props }, ref) {
+  function CurrencyInput({ classes, onChange, handleChange, defaultValue, ...props }, ref) {
     const [value, setValue] = useState(defaultValue ?? '');
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const formatChange = (event: ChangeEvent<HTMLInputElement>) => {
       const inputValue = event.target.value;
       const currencyValue = formatToCurrency(inputValue);
 
       setValue(currencyValue);
 
-      if (onChange) { onChange(Number(currencyValue)); }
+      if (onChange) { onChange(event) }
+      if (handleChange) { handleChange(Number(currencyValue)); }
     }
     
     return (
@@ -58,7 +59,7 @@ export const CurrencyInput = forwardRef<HTMLInputElement, Props>(
           {...props}
           value={value}
           ref={ref}
-          onChange={handleChange}
+          onChange={formatChange}
           type="number"
         />
       </div>

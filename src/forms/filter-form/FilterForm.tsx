@@ -1,3 +1,4 @@
+import { useForm } from "react-hook-form";
 import { Button } from "../../ui/Button";
 import { DateInput } from "../DateInput";
 import { CurrencyInput } from "../currency-input/CurrencyInput";
@@ -13,9 +14,41 @@ const statuses = [
   { text: 'Estornadas', value: '' },
 ];
 
+type Fields = {
+  status?: string[];
+
+  supplier?: string;
+  category?: string;
+  documentType?: string;
+  bankAccount?: string;
+
+  minValue?: number;
+  maxValue?: number;
+
+  minIssueDate?: string;
+  maxIssueDate?: string;
+
+  minDueDate?: string;
+  maxDueDate?: string;
+
+  minDischargeDate?: string;
+  maxDischargeDate?: string;
+
+  minReversalDate?: string;
+  maxReversalDate?: string;
+}
+
 export function FilterForm() {
+  const {
+    register, handleSubmit, formState: { errors },
+  } = useForm<Fields>();
+
+  const onSubmit = handleSubmit((fields) => {
+    console.log(fields);
+  });
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div className=" flex-col sm:flex-row mt-8 gap-8 flex flex-wrap justify-between">
         <FieldsGroup className="justify-between">
           <fieldset className="grid grid-cols-2 grid-rows-2 text-sm">
@@ -24,6 +57,7 @@ export function FilterForm() {
             {statuses.map((status) => (
               <label key={status.text}>
                 <input
+                  {...register('status')}
                   value={status.value}
                   type="checkbox"
                   name="status"
@@ -39,32 +73,54 @@ export function FilterForm() {
             <Legend>Valor</Legend>
 
             <DateGroup className="xs:min-w-xs">
-              <CurrencyInput classes={{ container: "flex-1" }} />
+              <CurrencyInput
+                classes={{ container: "flex-1" }}
+                {...register('minValue')}
+              />
 
               <span>até</span>
 
-              <CurrencyInput classes={{ container: "flex-1" }} />
+              <CurrencyInput
+                classes={{ container: "flex-1" }}
+                {...register('maxValue')}
+              />
             </DateGroup>
           </fieldset>
 
-          <Select classes={{ container: "w-full" }} placeholder="Fornecedor ou transportadora" id="supplier-input">
-            <Option value="somevalue1">Some option 1</Option>
-            <Option value="somevalue2">Some option 2</Option>
+          <Select
+            classes={{ container: "w-full" }}
+            placeholder="Fornecedor ou transportadora"
+            {...register('supplier')}
+          >
+            <Option value="amazon">Amazon</Option>
+            <Option value="mercado-livre">Mercado livre</Option>
           </Select>
         </FieldsGroup>
 
         <FieldsGroup>
-          <Select classes={{ container: "w-full" }} placeholder="Categoria">
+          <Select
+            classes={{ container: "w-full" }}
+            placeholder="Categoria"
+            {...register('category')}
+          >
             <Option value="somevalue1">Some option 1</Option>
             <Option value="somevalue2">Some option 2</Option>
           </Select>
 
-          <Select classes={{ container: "w-full" }} placeholder="Tipo de documento">
+          <Select
+            classes={{ container: "w-full" }}
+            placeholder="Tipo de documento"
+            {...register('documentType')}
+          >
             <Option value="somevalue1">Some option 1</Option>
             <Option value="somevalue2">Some option 2</Option>
           </Select>
 
-          <Select classes={{ container: "w-full" }} placeholder="Conta bancária">
+          <Select
+            classes={{ container: "w-full" }}
+            placeholder="Conta bancária"
+            {...register('bankAccount')}
+          >
             <Option value="somevalue1">Some option 1</Option>
             <Option value="somevalue2">Some option 2</Option>
           </Select>
@@ -73,11 +129,17 @@ export function FilterForm() {
             <Legend>Data de emissão</Legend>
             
             <DateGroup>
-              <DateInput classes={{ container: 'flex-1' }} />
+              <DateInput
+                classes={{ container: 'flex-1' }}
+                {...register('minIssueDate')}
+              />
 
               <span>até</span>
 
-              <DateInput classes={{ container: 'flex-1' }} />
+              <DateInput
+                classes={{ container: 'flex-1' }}
+                {...register('maxIssueDate')}
+              />
             </DateGroup>
           </fieldset>
         </FieldsGroup>
@@ -87,11 +149,17 @@ export function FilterForm() {
             <Legend>Data de vencimento</Legend>
 
             <DateGroup className="w-full"> 
-              <DateInput classes={{ container: 'flex-1' }} />
+              <DateInput
+                classes={{ container: 'flex-1' }}
+                {...register('minDueDate')}
+              />
 
               <span>até</span>
 
-              <DateInput classes={{ container: 'flex-1' }} />
+              <DateInput
+                classes={{ container: 'flex-1' }}
+                {...register('maxDueDate')}
+              />
             </DateGroup>
           </fieldset>
 
@@ -99,11 +167,17 @@ export function FilterForm() {
             <Legend>Data de quitação</Legend>
 
             <DateGroup className="w-full"> 
-              <DateInput classes={{ container: 'flex-1' }} />
+              <DateInput
+                classes={{ container: 'flex-1' }}
+                {...register('minDischargeDate')}
+              />
 
               <span>até</span>
 
-              <DateInput classes={{ container: 'flex-1' }} />
+              <DateInput
+                classes={{ container: 'flex-1' }}
+                {...register('maxDischargeDate')}
+              />
             </DateGroup>
           </fieldset>
 
@@ -111,11 +185,17 @@ export function FilterForm() {
             <Legend>Data de estorno</Legend>
 
             <DateGroup className="w-full"> 
-              <DateInput classes={{ container: 'flex-1' }} />
+              <DateInput
+                classes={{ container: 'flex-1' }}
+                {...register('minReversalDate')}
+              />
 
               <span>até</span>
 
-              <DateInput classes={{ container: 'flex-1' }} />
+              <DateInput
+                classes={{ container: 'flex-1' }}
+                {...register('maxReversalDate')}
+              />
             </DateGroup>
           </fieldset>
         </FieldsGroup>
@@ -131,7 +211,7 @@ export function FilterForm() {
         </Button>
 
         <Button 
-          type="button"
+          type="submit"
           className="min-w-[112px]"
           aria-label="Adicionar uma conta"
         >
