@@ -22,6 +22,27 @@ type Option = {
   text: string;
 };
 
+/**
+ * Select é um input personalizado que permite mais possibilidades de
+ * estilização de um select e suas options.
+ * 
+ * O componente renderiza um select comum, mas que só aparece para leitores de
+ * tela, mantendo acessível.
+ * 
+ * Mapeia as interações no select original para uma interface personalizada
+ * 
+ * Funciona em conjunto com o compnente Option
+ * 
+ * @component
+ * @param {function} props.placeholder - Renderiza um placeholder dentro do
+ * select quando nenhum valor foi selecionado
+ *  
+ * @example
+ * 
+ * <Select placeholder="Selecione o fornecedor">
+ *   <Option value="amazon">Amazon</Option>
+ * </Select>
+ */
 export const Select = forwardRef<HTMLSelectElement, Props>(
   function Select({
     children,
@@ -33,7 +54,10 @@ export const Select = forwardRef<HTMLSelectElement, Props>(
     const [options, setOptions] = useState<Option[]>([]);
     const [selected, setSelected] = useState<Option | null>(null);
     const [isOpen, setIsOpen] = useState(false);
-
+    
+    // sempre que as options filhas do select forem alteradas esse useEffect
+    // busca as options e armazena as informações delas no estado para poder
+    // renderizar as options personalizadas  
     useEffect(() => {
       if (!selectRef.current) return;
       const optionElements = selectRef.current.childNodes as NodeListOf<HTMLInputElement>;
@@ -75,6 +99,7 @@ export const Select = forwardRef<HTMLSelectElement, Props>(
       }
     };
 
+    // permite usar uma ref interna e ainda assim expor a ref para o zod
     const handleRef = (element: HTMLSelectElement | null) => {
       selectRef.current = element;
       if (!ref) return;
