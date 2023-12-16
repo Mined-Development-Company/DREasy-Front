@@ -15,6 +15,12 @@ import { cn } from "../../libs/cn";
 type Props = ComponentProps<'select'> & {
   children: ReactNode;
   placeholder?: string;
+  classes?: {
+    container?: string;
+    select?: string;
+    option?: string;
+  };
+  className?: never;
 };
 
 type Option = {
@@ -47,7 +53,7 @@ export const Select = forwardRef<HTMLSelectElement, Props>(
   function Select({
     children,
     placeholder = 'Selecione',
-    className,
+    classes,
     ...props
   }, ref) {
     const selectRef = useRef<HTMLSelectElement  | null>(null);
@@ -122,14 +128,17 @@ export const Select = forwardRef<HTMLSelectElement, Props>(
           {children}
         </select>
 
-        <div aria-hidden className={cn("peer-focus:outline outline-2 w-40 relative text-grayish-green", className)}>
-          <div onClick={handleClick} className="p-3 border flex justify-between items-center gap-2 rounded-sm text-sm cursor-pointer">
+        <div aria-hidden className={cn("peer-focus:outline outline-2 w-40 relative text-grayish-green", classes?.container)}>
+          <div  
+            onClick={handleClick}
+            className={cn("p-3 border flex justify-between items-center gap-2 rounded-sm text-sm cursor-pointer", classes?.select)}
+          >
             <span className="text-ellipsis select-none">{selected?.text ?? placeholder}</span>
             
             <IoIosArrowDown className={cn('transition-transform', isOpen && 'rotate-180')} />
           </div>
 
-          <div className={cn('absolute z-10 left-0 w-full border rounded-sm text-sm bg-gray-100 hidden', isOpen && 'block')}>
+          <div className={cn('absolute z-10 left-0 w-full border rounded-sm text-sm bg-gray-100 hidden', isOpen && 'block', classes?.option)}>
             {options.map((option) => (
               <div
                 onClick={() => {

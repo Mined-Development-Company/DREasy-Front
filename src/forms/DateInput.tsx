@@ -2,20 +2,29 @@ import { ComponentProps, forwardRef } from "react";
 import { RiCalendarLine } from "react-icons/ri";
 import { cn } from "../libs/cn";
 
-type Props = ComponentProps<'input'>;
+type Props = ComponentProps<'input'> & {
+  classes?: {
+    container?: string;
+    input?: string;
+    icon?: string;
+  };
+  className?: never;
+};
 
 export const DateInput = forwardRef<HTMLInputElement, Props>(
-  function DateInput({ className, ...props }, ref) {
+  function DateInput({ classes, ...props }, ref) {
     return (
-      <div className={cn("w-fit relative text-[#658A73] flex items-center", className)}>
+      <div className={cn("w-fit relative text-[#658A73] flex items-center", classes?.container)}>
         <input
           {...props}
-          className="p-3 px-3 text-sm text-left w-full border rounded-sm"
+          className={cn("p-3 px-3 text-sm text-left w-full border rounded-sm", classes?.input)}
           ref={ref}
           type="date"
         />
 
-        <RiCalendarLine className="bg-white pointer-events-none text-lg absolute right-0 mr-3" />
+        <RiCalendarLine
+          className={cn("bg-white pointer-events-none text-lg absolute right-0 mr-3", classes?.icon)}
+        />
       </div>
     );
   }

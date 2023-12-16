@@ -1,5 +1,6 @@
 import { Button } from "../../ui/Button";
 import { DateInput } from "../DateInput";
+import { CurrencyInput } from "../currency-input/CurrencyInput";
 import { Option, Select } from "../select";
 import { DateGroup } from "./DateGroup";
 import { FieldsGroup } from "./FieldsGroup";
@@ -42,15 +43,15 @@ export function FilterForm() {
             <Legend>Valor</Legend>
 
             <DateGroup>
-              <DateInput className="flex-1" />
+              <CurrencyInput classes={{ container: "flex-1" }} />
 
               <span>até</span>
 
-              <DateInput className="flex-1" />
+              <CurrencyInput classes={{ container: "flex-1" }} />
             </DateGroup>
           </fieldset>
 
-          <Select className="w-full" placeholder="Fornecedor ou transportadora" id="supplier-input">
+          <Select classes={{ container: "w-full" }} placeholder="Fornecedor ou transportadora" id="supplier-input">
             <Option value="somevalue1">Some option 1</Option>
             <Option value="somevalue2">Some option 2</Option>
           </Select>
@@ -58,17 +59,17 @@ export function FilterForm() {
 
         <FieldsGroup>
 
-          <Select className="w-full" placeholder="Categoria">
+          <Select classes={{ container: "w-full" }} placeholder="Categoria">
             <Option value="somevalue1">Some option 1</Option>
             <Option value="somevalue2">Some option 2</Option>
           </Select>
 
-          <Select className="w-full" placeholder="Tipo de documento">
+          <Select classes={{ container: "w-full" }} placeholder="Tipo de documento">
             <Option value="somevalue1">Some option 1</Option>
             <Option value="somevalue2">Some option 2</Option>
           </Select>
 
-          <Select className="w-full" placeholder="Conta bancária">
+          <Select classes={{ container: "w-full" }} placeholder="Conta bancária">
             <Option value="somevalue1">Some option 1</Option>
             <Option value="somevalue2">Some option 2</Option>
           </Select>
@@ -77,11 +78,11 @@ export function FilterForm() {
             <Legend>Data de emissão</Legend>
             
             <DateGroup>
-              <DateInput className="flex-1" />
+              <DateInput classes={{ container: 'flex-1' }} />
 
               <span>até</span>
 
-              <DateInput className="flex-1" />
+              <DateInput classes={{ container: 'flex-1' }} />
             </DateGroup>
           </fieldset>
         </FieldsGroup>
@@ -91,11 +92,11 @@ export function FilterForm() {
             <Legend>Data de vencimento</Legend>
 
             <DateGroup className="w-full"> 
-              <DateInput className="flex-1" />
+              <DateInput classes={{ container: 'flex-1' }} />
 
               <span>até</span>
 
-              <DateInput className="flex-1" />
+              <DateInput classes={{ container: 'flex-1' }} />
             </DateGroup>
           </fieldset>
 
@@ -103,11 +104,11 @@ export function FilterForm() {
             <Legend>Data de quitação</Legend>
 
             <DateGroup className="w-full"> 
-              <DateInput className="flex-1" />
+              <DateInput classes={{ container: 'flex-1' }} />
 
               <span>até</span>
 
-              <DateInput className="flex-1" />
+              <DateInput classes={{ container: 'flex-1' }} />
             </DateGroup>
           </fieldset>
 
@@ -115,11 +116,11 @@ export function FilterForm() {
             <Legend>Data de estorno</Legend>
 
             <DateGroup className="w-full"> 
-              <DateInput className="flex-1" />
+              <DateInput classes={{ container: 'flex-1' }} />
 
               <span>até</span>
 
-              <DateInput className="flex-1" />
+              <DateInput classes={{ container: 'flex-1' }} />
             </DateGroup>
           </fieldset>
         </FieldsGroup>

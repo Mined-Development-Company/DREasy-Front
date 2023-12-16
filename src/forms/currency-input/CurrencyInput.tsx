@@ -5,6 +5,12 @@ import styles from './styles.module.css';
 
 type Props = ComponentProps<'input'> & {
   onChange?: (value: number) => void;
+  classes?: {
+    container?: string;
+    input?: string;
+    icon?: string;
+  };
+  className?: never;
 };
 
 /**
@@ -30,7 +36,7 @@ type Props = ComponentProps<'input'> & {
  * <CurrencyInput defaultValue="12,3" onChange={handleChange} />
  */
 export const CurrencyInput = forwardRef<HTMLInputElement, Props>(
-  function CurrencyInput({ className, onChange, defaultValue, ...props }, ref) {
+  function CurrencyInput({ classes, onChange, defaultValue, ...props }, ref) {
     const [value, setValue] = useState(defaultValue ?? '');
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -43,12 +49,12 @@ export const CurrencyInput = forwardRef<HTMLInputElement, Props>(
     }
     
     return (
-      <div className={cn("text-sm relative flex items-center text-[#658A73] w-fit", styles.currency, className)}>
-        <span className="ml-3 z-0 cursor-text absolute pointer-events-none ">R$</span>
+      <div className={cn("text-sm relative flex items-center text-[#658A73] w-fit", styles.currency, classes?.container)}>
+        <span className={cn("ml-3 z-0 cursor-text absolute pointer-events-none", classes?.icon)}>R$</span>
 
         <input
           placeholder="0,00"
-          className="p-3 py-4 pl-10 w-full left-0 border border-zinc-300 top-0 rounded-sm text-right text-xs"
+          className={cn("p-3 py-4 pl-10 w-full left-0 border border-zinc-300 top-0 rounded-sm text-right text-xs", classes?.input)}
           {...props}
           value={value}
           ref={ref}
