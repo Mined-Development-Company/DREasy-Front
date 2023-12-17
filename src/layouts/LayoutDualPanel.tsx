@@ -22,8 +22,9 @@ export const LayoutDualPanel = ({ children, className }: ILayoutDualPanel) => {
       <button
         onClick={() => setShow(false)}
         className={cn(
-          'absolute z-0 w-screen h-screen bg-[rgba(0,0,0,0.5)] xl:hidden backdrop-blur-sm',
-          !show ? 'hidden' : '',
+          show
+            ? 'absolute z-40 w-screen h-screen bg-[rgba(0,0,0,0.5)] xl:hidden backdrop-blur-sm'
+            : 'hidden',
         )}
       ></button>
       <img
@@ -33,8 +34,8 @@ export const LayoutDualPanel = ({ children, className }: ILayoutDualPanel) => {
       />
       <section
         className={cn(
-          'relative z-10 transition-all duration-500 max-w-full max-h-screen h-screen overflow-auto py-5',
-          show ? 'lg:ml-80' : 'lg:ml-0',
+          'relative z-10 transition-all duration-500 max-w-full max-h-screen h-screen overflow-auto py-5 px-2',
+          show ? 'desktop:ml-80 ' : 'ml-0 desktop:px-12',
         )}
       >
         <Header showSiderBar={show} handleShowSideBar={() => setShow(true)} />

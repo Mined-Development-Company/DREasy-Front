@@ -20,11 +20,11 @@ export const Header = ({ showSiderBar, handleShowSideBar }: IHeader) => {
     >
       <button
         onClick={handleShowSideBar}
-        className={cn('space-y-2', showSiderBar && 'hidden')}
+        className={cn('space-y-1', showSiderBar && 'hidden')}
       >
-        <div className="w-8 h-0.5 bg-grayish-green"></div>
-        <div className="w-8 h-0.5 bg-grayish-green"></div>
-        <div className="w-8 h-0.5 bg-grayish-green"></div>
+        <div className="w-8 h-1 rounded-full bg-grayish-green"></div>
+        <div className="w-8 h-1 rounded-full bg-grayish-green"></div>
+        <div className="w-8 h-1 rounded-full bg-grayish-green"></div>
       </button>
       <nav className="flex items-center gap-2 text-grayish-green sm:gap-5 w-fit">
         <div className="flex items-center">
