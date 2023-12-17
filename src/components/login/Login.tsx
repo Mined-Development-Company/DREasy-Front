@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 // Forms
 import { Input } from '../../forms';
 // React-router-dom
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const schemaLogin = z.object({
   email: z
@@ -24,6 +24,8 @@ export function Login() {
   function handleLogin(data: TypeLogin): void {
     console.log(data);
   }
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -44,7 +46,7 @@ export function Login() {
         />
         <img
           className="w-full h-[400px] sm:h-[550px] lg:h-[100vh]"
-          src="/background/background.png"
+          src="/background/backgroundLoginAndRegister.png"
           alt="login-image"
         />
       </div>
@@ -85,6 +87,7 @@ export function Login() {
           </p>
         </div>
         <button
+          onClick={() => navigate('/invoices')}
           className="w-full py-4 font-sans font-semibold text-white uppercase bg-green-500 rounded outline-none mt-7 hover:bg-green-400 hover:ring-1 hover:ring-green-500 focus:ring-2 focus:ring-green-400"
           type="submit"
         >

@@ -59,12 +59,12 @@ export const SideBar = ({ handleShow, headerShowSideBar }: ISideBar) => {
       >
         <FiLogOut className="rotate-180 text-grayish-green" size={20} />
       </button>
-      <div className="w-full h-full px-4 pt-2 space-y-6 bg-white rounded-3xl">
+      <div className="w-full h-full px-4 pt-2 space-y-6 bg-white shadow-2xl rounded-3xl">
         <h1 className="p-2 m-auto text-5xl font-bold text-transparent w-fit bg-clip-text bg-gradient-to-r from-[#23FF95] to-[#0FB27C]">
           DREasy
         </h1>
         <Card title="Invoices" to="/invoices" icon={<RiBankCardFill />} />
-        <Card title="Receives" to="/Receives" icon={<AiTwotoneBank />} />
+        <Card title="Receives" to="/receives" icon={<AiTwotoneBank />} />
         <Card
           title="Cash flow"
           to="/cash-flow"
