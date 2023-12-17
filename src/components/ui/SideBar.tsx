@@ -64,7 +64,7 @@ export const SideBar = ({ handleShow, headerShowSideBar }: ISideBar) => {
           DREasy
         </h1>
         <Card title="Invoices" to="/invoices" icon={<RiBankCardFill />} />
-        <Card title="Receives" to="/Receives" icon={<AiTwotoneBank />} />
+        <Card title="Receives" to="/receives" icon={<AiTwotoneBank />} />
         <Card
           title="Cash flow"
           to="/cash-flow"
