@@ -45,7 +45,7 @@ export function Register() {
         />
         <img
           className="object-cover w-full h-full"
-          src="/background/background.png"
+          src="/background/backgroundLoginAndRegister.png"
           alt="register-image"
         />
       </div>

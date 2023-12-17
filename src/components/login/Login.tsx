@@ -44,7 +44,7 @@ export function Login() {
         />
         <img
           className="w-full h-[400px] sm:h-[550px] lg:h-[100vh]"
-          src="/background/background.png"
+          src="/background/backgroundLoginAndRegister.png"
           alt="login-image"
         />
       </div>
