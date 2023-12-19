@@ -6,7 +6,7 @@ export * from './currency-input/CurrencyInput'
 
 export * from './filter-form/DateGroup'
 
-export * from './filter-form/ErrorMessage'
+export * from './ErrorMessage'
 
 export * from './filter-form/FieldsGroup'
 

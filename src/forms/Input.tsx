@@ -3,7 +3,7 @@ import React from 'react';
 // Libs
 import { cn } from '../libs';
 // Forms
-import { ErrorMessage } from './filter-form/ErrorMessage';
+import { ErrorMessage } from './ErrorMessage';
 
 type IInputProps = React.HTMLAttributes<HTMLInputElement> & {
   title?: string;
