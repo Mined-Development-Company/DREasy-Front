@@ -7,7 +7,6 @@ export default {
         desktop: '1350px',
         tablet: '720px',
         mobile: '320px',
-        xs: '380px',
       },
       boxShadow: {
         custon: '1px 3px 4px rgba(0, 0, 0, 0.25)',

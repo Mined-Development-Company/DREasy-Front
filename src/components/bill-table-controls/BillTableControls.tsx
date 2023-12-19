@@ -5,6 +5,7 @@ import { Button } from '../ui/Button';
 import { FilterForm } from '../../forms';
 // React icons
 import { FiPlusCircle } from 'react-icons/fi';
+import { BaseLayout } from '../../layouts';
 
 export function BillTableControls() {
   const [showFilters, setShowFilters] = React.useState<boolean>(false);
@@ -14,7 +15,7 @@ export function BillTableControls() {
   };
 
   return (
-    <div className="p-2 mt-3 bg-white border shadow-md tablet:p-5 rounded-xl">
+    <BaseLayout>
       <div className="flex items-center justify-between gap-3">
         <Button
           size="md"
@@ -38,6 +39,6 @@ export function BillTableControls() {
       </div>
 
       {showFilters && <FilterForm />}
-    </div>
+    </BaseLayout>
   );
 }
