@@ -55,8 +55,8 @@ export function FilterForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="flex flex-col flex-wrap justify-between gap-8 mt-8 sm:flex-row">
-        <FieldsGroup className="justify-between">
+      <div className="flex flex-col flex-wrap desktop:flex-nowrap justify-between gap-8 desktop:gap-4 mt-8 mobile:flex-row">
+        <FieldsGroup className="justify-between tablet:min-w-[48.5%] desktop:min-w-0">
           <fieldset className="grid grid-cols-2 grid-rows-2 text-sm">
             <Legend>Status</Legend>
 
@@ -177,7 +177,7 @@ export function FilterForm() {
         </FieldsGroup>
 
         <FieldsGroup className="justify-between">
-          <fieldset className="lg:w-[48.5%]">
+          <fieldset className="tablet:max-w-[48.5%] desktop:max-w-none">
             <Legend>Data de vencimento</Legend>
 
             <DateGroup className="w-full">
@@ -200,7 +200,7 @@ export function FilterForm() {
             </ErrorMessage>
           </fieldset>
 
-          <fieldset className="lg:w-[48.5%]">
+          <fieldset className="tablet:max-w-[48.5%] desktop:max-w-none">
             <Legend>Data de quitação</Legend>
 
             <DateGroup className="w-full">
@@ -222,7 +222,7 @@ export function FilterForm() {
             </ErrorMessage>
           </fieldset>
 
-          <fieldset className="lg:w-[48.5%]">
+          <fieldset className="tablet:max-w-[48.5%] desktop:max-w-none">
             <Legend>Data de estorno</Legend>
 
             <DateGroup className="w-full">
@@ -247,8 +247,8 @@ export function FilterForm() {
         </FieldsGroup>
       </div>
 
-      <div className="flex justify-end gap-5 mt-3 sm:mt-6">
-        <Button color="secondary" type="button" className="min-w-[112px]">
+      <div className="flex justify-end gap-5 mt-3 mobile:mt-6">
+        <Button color="secondary" type="button" className="tablet:min-w-[112px]">
           Limpar filtros
         </Button>
 

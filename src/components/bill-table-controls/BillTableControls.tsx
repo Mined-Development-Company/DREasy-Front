@@ -14,7 +14,7 @@ export function BillTableControls() {
   };
 
   return (
-    <div className="p-2 mt-3 bg-white border shadow-md sm:p-5 rounded-xl">
+    <div className="p-2 mt-3 bg-white border shadow-md tablet:p-5 rounded-xl">
       <div className="flex items-center justify-between gap-3">
         <Button
           size="md"

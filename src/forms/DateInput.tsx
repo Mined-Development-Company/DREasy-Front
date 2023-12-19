@@ -28,7 +28,7 @@ export const DateInput = forwardRef<HTMLInputElement, Props>(function DateInput(
       <input
         {...props}
         className={cn(
-          'p-3 px-3 text-sm text-left w-full border rounded-sm',
+          'px-1 py-3.5 tablet:p-3 text-xs tablet:text-sm text-left w-full border rounded-sm',
           classes?.input,
         )}
         ref={ref}
@@ -37,7 +37,7 @@ export const DateInput = forwardRef<HTMLInputElement, Props>(function DateInput(
 
       <RiCalendarLine
         className={cn(
-          'bg-white pointer-events-none text-lg absolute right-0 mr-3',
+          'bg-white pointer-events-none text-lg absolute right-0 mr-1 tablet:mr-3',
           classes?.icon,
         )}
       />
