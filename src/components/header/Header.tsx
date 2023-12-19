@@ -26,13 +26,13 @@ export const Header = ({ showSiderBar, handleShowSideBar }: IHeader) => {
         <div className="w-8 h-1 rounded-full bg-grayish-green"></div>
         <div className="w-8 h-1 rounded-full bg-grayish-green"></div>
       </button>
-      <nav className="flex items-center gap-2 text-grayish-green sm:gap-5 w-fit">
+      <nav className="flex items-center gap-2 text-grayish-green tablet:gap-5 w-fit">
         <div className="flex items-center">
-          <span className="flex items-center justify-center mr-2 text-xs font-medium bg-white bg-red-300 border-2 border-green-500 rounded-full select-none w-7 h-7 sm:w-9 sm:h-9 sm:text-sm">
+          <span className="flex items-center justify-center mr-2 text-xs font-medium bg-white border-2 border-green-500 rounded-full select-none w-7 h-7 tablet:w-9 tablet:h-9 tablet:text-sm">
             US
           </span>
 
-          <span className="text-sm sm:text-xl">Usuário</span>
+          <span className="text-sm tablet:text-xl">Usuário</span>
         </div>
 
         <Link aria-label="Configurações" className="p-1" to="/settings">
