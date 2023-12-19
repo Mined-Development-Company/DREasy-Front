@@ -7,3 +7,5 @@ export * from './login/Login';
 export * from './bill-table-controls/BillTableControls';
 
 export * from './PageIdentifier/PageIdentifier';
+
+export * from './table/Table';

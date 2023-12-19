@@ -21,3 +21,5 @@ export * from './select/Option'
 export * from './select/Select'
 
 export * from './select/Option'
+
+export * from './InputCheckBox'
