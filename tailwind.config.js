@@ -20,6 +20,7 @@ export default {
         'grayish-green': '#294333',
         'green-300': '#4ADE80',
         'green-500': '#22C55E',
+        'green-700': '#658A73',
         'custom-red': '#FF3636',
 
         //background
