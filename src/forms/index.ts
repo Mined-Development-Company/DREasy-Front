@@ -4,9 +4,9 @@ export * from './Input'
 
 export * from './currency-input/CurrencyInput'
 
-export * from './filter-form/DateGroup'
+export * from './DateGroup'
 
-export * from './filter-form/ErrorMessage'
+export * from './ErrorMessage'
 
 export * from './filter-form/FieldsGroup'
 
@@ -14,7 +14,7 @@ export * from './filter-form/Fieldset'
 
 export * from './filter-form/FilterForm'
 
-export * from './filter-form/Legend'
+export * from './Legend'
 
 export * from './select/Option'
 

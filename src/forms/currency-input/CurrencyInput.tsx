@@ -53,7 +53,7 @@ export const CurrencyInput = forwardRef<HTMLInputElement, Props>(
     return (
       <div
         className={cn(
-          'text-sm relative flex items-center text-[#658A73] w-fit',
+          'text-sm relative flex items-center text-green-700 w-fit',
           styles.currency,
           classes?.container,
         )}

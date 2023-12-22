@@ -1,7 +1,7 @@
 // React
 import { ComponentProps } from 'react';
 // Libs
-import { cn } from '../../libs';
+import { cn } from '../libs';
 
 type Props = ComponentProps<'legend'>;
 

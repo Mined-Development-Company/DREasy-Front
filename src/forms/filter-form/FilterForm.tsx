@@ -6,10 +6,10 @@ import { Button } from '../../components/ui';
 import { DateInput } from '../DateInput';
 import { CurrencyInput } from '../currency-input/CurrencyInput';
 import { Option, Select } from '../select';
-import { DateGroup } from './DateGroup';
+import { DateGroup } from '../DateGroup';
 import { FieldsGroup } from './FieldsGroup';
-import { Legend } from './Legend';
-import { ErrorMessage } from './ErrorMessage';
+import { Legend } from '../Legend';
+import { ErrorMessage } from '../ErrorMessage';
 
 const statuses = [
   { text: 'Abertas', value: 'open' },
