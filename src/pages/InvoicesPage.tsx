@@ -1,15 +1,16 @@
 // Layout
 import { LayoutDualPanel } from '../layouts';
 // Components
-import { BillTableControls, PageIdentifier } from '../components';
-import { BillForm } from '../forms/bill-form/BillForm';
+
+import { BillTableControls, PageIdentifier, Table } from '../components';
 
 export const InvoicesPage = () => {
   return (
     <LayoutDualPanel>
       <PageIdentifier title="Invoices" />
       <BillTableControls />
-      <BillForm />
+
+      <Table />
     </LayoutDualPanel>
   );
 };
