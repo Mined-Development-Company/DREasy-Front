@@ -57,7 +57,7 @@ export function FilterForm() {
     <form onSubmit={onSubmit}>
       <div className="flex flex-col flex-wrap desktop:flex-nowrap justify-between gap-8 desktop:gap-4 mt-8 mobile:flex-row">
         <FieldsGroup className="justify-between tablet:min-w-[48.5%] desktop:min-w-0">
-          <fieldset className="grid grid-cols-2 grid-rows-2 text-sm">
+          <fieldset className="grid grid-cols-2 grid-rows-2 text-sm min-w-[245px]">
             <Legend>Status</Legend>
 
             {statuses.map((status) => (
@@ -101,7 +101,6 @@ export function FilterForm() {
 
           <div>
             <Select
-              classes={{ container: 'w-full' }}
               placeholder="Fornecedor ou transportadora"
               {...register('supplier')}
             >
@@ -116,7 +115,6 @@ export function FilterForm() {
         <FieldsGroup>
           <div>
             <Select
-              classes={{ container: 'w-full' }}
               placeholder="Categoria"
               {...register('category')}
             >
@@ -129,7 +127,6 @@ export function FilterForm() {
 
           <div>
             <Select
-              classes={{ container: 'w-full' }}
               placeholder="Tipo de documento"
               {...register('documentType')}
             >
@@ -142,7 +139,6 @@ export function FilterForm() {
 
           <div>
             <Select
-              classes={{ container: 'w-full' }}
               placeholder="Conta bancária"
               {...register('bankAccount')}
             >
