@@ -16,7 +16,10 @@ export const LayoutDualPanel = ({ children, className }: ILayoutDualPanel) => {
 
   return (
     <section
-      className={cn('relative w-screen h-screen bg-[#F5F5F5]', className)}
+      className={cn(
+        'relative w-screen flex justify-center h-screen bg-[#F5F5F5]',
+        className,
+      )}
     >
       <SideBar headerShowSideBar={show} handleShow={() => setShow(false)} />
       <button
@@ -28,14 +31,14 @@ export const LayoutDualPanel = ({ children, className }: ILayoutDualPanel) => {
         )}
       ></button>
       <img
-        className="absolute z-0"
+        className="absolute z-0 object-cover w-full"
         src="/background/BaseBackground.png"
         alt="Background"
       />
       <section
         className={cn(
-          'relative z-10 transition-all duration-500 max-w-full max-h-screen h-screen overflow-auto py-5 px-2',
-          show ? 'desktop:ml-80 ' : 'ml-0 desktop:px-12',
+          'relative z-10 transition-all duration-500 max-h-screen h-screen overflow-auto py-5 px-2 max-w-[1550px] w-full m-auto',
+          show ? 'desktop:ml-80' : 'ml-0 desktop:px-12',
         )}
       >
         <Header showSiderBar={show} handleShowSideBar={() => setShow(true)} />

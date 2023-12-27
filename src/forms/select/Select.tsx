@@ -142,15 +142,12 @@ export const Select = forwardRef<HTMLSelectElement, Props>(function Select(
 
       <div
         aria-hidden
-        className={cn(
-          'peer-focus:outline outline-2 w-40 relative text-grayish-green',
-          classes?.container,
-        )}
+        className={cn('w-40 relative text-grayish-green', classes?.container)}
       >
         <div
           onClick={handleClick}
           className={cn(
-            'p-3 border flex justify-between items-center gap-2 rounded-sm text-sm cursor-pointer',
+            'p-3 border flex justify-between items-center gap-2 rounded-sm text-sm cursor-pointer xl:h-[50px]',
             classes?.select,
           )}
         >
