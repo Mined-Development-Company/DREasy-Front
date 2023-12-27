@@ -12,6 +12,8 @@ export const PageIdentifier = ({ title }: IPageIdentifierProps) => {
 
   const titlLowerCase = title.toLocaleLowerCase();
 
+  console.log(pathname);
+
   return (
     <div className="space-y-1">
       <h1 className="pt-4 text-5xl font-semibold text-grayish-green">
@@ -28,9 +30,21 @@ export const PageIdentifier = ({ title }: IPageIdentifierProps) => {
           all
         </p>
         <p className="text-green-300">/</p>
-        <p className={cn(pathname === '/criar' && 'text-green-300')}>criar</p>
+        <p
+          className={cn(
+            pathname === `/${titlLowerCase}/account` && 'text-green-300',
+          )}
+        >
+          criar
+        </p>
         <p className="text-green-300">/</p>
-        <p className={cn(pathname === '/editar' && 'text-green-300')}>editar</p>
+        <p
+          className={cn(
+            pathname === `/${titlLowerCase}/editar` && 'text-green-300',
+          )}
+        >
+          editar
+        </p>
       </div>
     </div>
   );

@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import {
   CashFlow,
   DrePage,
-  HomePage,
   InvoicesPage,
   LoginPage,
   ReceivesPage,
@@ -17,9 +16,8 @@ const AppRoutes = () => {
       <Route path="/" element={<LoginPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/receives" element={<ReceivesPage />} />
-      <Route path="/invoices" element={<InvoicesPage />} />
+      <Route path="/receives/*" element={<ReceivesPage />} />
+      <Route path="/invoices/*" element={<InvoicesPage />} />
       <Route path="/cash-flow" element={<CashFlow />} />
       <Route path="/dre" element={<DrePage />} />
     </Routes>

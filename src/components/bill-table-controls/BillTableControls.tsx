@@ -6,9 +6,14 @@ import { FilterForm } from '../../forms';
 // React icons
 import { FiPlusCircle } from 'react-icons/fi';
 import { BaseLayout } from '../../layouts';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export function BillTableControls() {
   const [showFilters, setShowFilters] = React.useState<boolean>(false);
+
+  const { pathname } = useLocation();
+
+  const navigate = useNavigate();
 
   const toggleFilters = () => {
     setShowFilters((prev) => !prev);
@@ -31,6 +36,7 @@ export function BillTableControls() {
           type="button"
           className="flex items-center gap-1"
           aria-label="Adicionar uma conta"
+          onClick={() => navigate(`${pathname}/account`)}
         >
           <FiPlusCircle className="text-xl" />
 

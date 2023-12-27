@@ -248,7 +248,11 @@ export function FilterForm() {
       </div>
 
       <div className="flex justify-end gap-5 mt-3 mobile:mt-6">
-        <Button color="secondary" type="button" className="tablet:min-w-[112px]">
+        <Button
+          color="secondary"
+          type="button"
+          className="tablet:min-w-[112px]"
+        >
           Limpar filtros
         </Button>
 
