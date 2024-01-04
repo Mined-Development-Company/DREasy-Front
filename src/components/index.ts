@@ -9,3 +9,5 @@ export * from './bill-table-controls/BillTableControls';
 export * from './PageIdentifier/PageIdentifier';
 
 export * from './table/Table';
+
+export * from './new-account/NewAccount';

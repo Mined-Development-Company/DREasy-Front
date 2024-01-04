@@ -224,7 +224,7 @@ export const Table = () => {
   }, [currentPage]);
 
   return (
-    <BaseLayout className="p-0 overflow-x-auto sm:p-0">
+    <BaseLayout className="p-0 overflow-x-auto sm:p-0 ">
       <table className="w-full" border={1}>
         <colgroup>
           <col className="border-b" />
@@ -322,7 +322,7 @@ export const Table = () => {
         </tbody>
         <tfoot>
           <tr className="text-base bg-green-light">
-            <th className="py-4 font-bold">Total</th>
+            <th className="pl-4 py-4 font-bold">Total</th>
             <th className="font-medium max-w-[100px]">
               registros: {data.length}
             </th>
