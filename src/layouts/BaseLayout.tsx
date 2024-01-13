@@ -11,7 +11,7 @@ export const BaseLayout = ({ children, className }: IBaseLayout) => {
   return (
     <section
       className={cn(
-        'p-2 mt-3 bg-white border shadow-md sm:p-4 rounded-xl',
+        'max-w-[1536px] p-2 m-auto mt-3 bg-white border shadow-md sm:p-4 rounded-xl',
         className,
       )}
     >

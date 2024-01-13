@@ -15,7 +15,7 @@ export const PageIdentifier = ({ title }: IPageIdentifierProps) => {
   console.log(pathname);
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-1 max-w-[1536px] m-auto">
       <h1 className="pt-4 text-5xl font-semibold text-grayish-green">
         {title}
       </h1>
