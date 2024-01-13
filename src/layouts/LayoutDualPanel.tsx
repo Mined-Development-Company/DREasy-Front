@@ -37,7 +37,7 @@ export const LayoutDualPanel = ({ children, className }: ILayoutDualPanel) => {
       />
       <section
         className={cn(
-          'relative z-10 transition-all duration-500 max-h-screen h-screen overflow-auto py-5 px-2 max-w-[1550px] w-full m-auto',
+          'relative z-10 transition-all duration-500 max-h-screen h-screen overflow-auto py-5 px-2 w-full m-auto',
           show ? 'desktop:ml-80' : 'ml-0 desktop:px-12',
         )}
       >

@@ -14,7 +14,7 @@ export const Header = ({ showSiderBar, handleShowSideBar }: IHeader) => {
   return (
     <header
       className={cn(
-        'flex items-center',
+        'max-w-[1536px] flex items-center m-auto',
         showSiderBar ? 'justify-end' : 'justify-between',
       )}
     >
