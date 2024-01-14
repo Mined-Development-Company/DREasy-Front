@@ -13,12 +13,12 @@ export const DrePage = () => {
   const arrayDados = [{
     label: 'Receitas',
     data: [19, 20, 15, 20, 2, 14],
-    backgroundColor: ['#4ADE80'],
+    backgroundColor: '#4ADE80',
   },
   {
     label: 'Despesas',
     data: [25, 19, 10, 12, 26, 15],
-    backgroundColor: ['#FF3636'],
+    backgroundColor: '#FF3636',
   }]
 
   return (

@@ -4,7 +4,7 @@ import { Bar } from "react-chartjs-2";
 export interface DadosGraphic {
   label: string
   data: number[]
-  backgroundColor?: string[]
+  backgroundColor?: string[] | string
 }
 
 export interface GraphicBarProps {

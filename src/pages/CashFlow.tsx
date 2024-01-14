@@ -13,12 +13,12 @@ export const CashFlow = () => {
   const arrayDados = [{
     label: 'Receitas',
     data: [19, 10, 12, 26, 15, 20],
-    backgroundColor: ['#4ADE80'],
+    backgroundColor: '#4ADE80',
   },
   {
     label: 'Despesas',
     data: [20, 15, 20, 2, 14, 25],
-    backgroundColor: ['#FF3636'],
+    backgroundColor: '#FF3636',
   }]
 
   return (
