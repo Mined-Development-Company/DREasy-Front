@@ -11,3 +11,7 @@ export * from './PageIdentifier/PageIdentifier';
 export * from './table/Table';
 
 export * from './new-account/NewAccount';
+
+export * from './graphic/GraphicBar';
+
+
